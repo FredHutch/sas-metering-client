@@ -1,0 +1,45 @@
+{
+	"ImportPath": "procreporter",
+	"GoVersion": "go1.9",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/StackExchange/wmi",
+			"Rev": "ea383cf3ba6ec950874b8486cd72356d007c768f"
+		},
+		{
+			"ImportPath": "github.com/go-ole/go-ole",
+			"Comment": "v1.2.0-30-g2ecd927",
+			"Rev": "2ecd927eaf828c4fc088fae349b28eed1480ff56"
+		},
+		{
+			"ImportPath": "github.com/go-ole/go-ole/oleutil",
+			"Comment": "v1.2.0-30-g2ecd927",
+			"Rev": "2ecd927eaf828c4fc088fae349b28eed1480ff56"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows",
+			"Rev": "a1a1f1746d156bbc9954f29134b20ed4ce2752f1"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows/registry",
+			"Rev": "a1a1f1746d156bbc9954f29134b20ed4ce2752f1"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows/svc",
+			"Rev": "a1a1f1746d156bbc9954f29134b20ed4ce2752f1"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows/svc/debug",
+			"Rev": "a1a1f1746d156bbc9954f29134b20ed4ce2752f1"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows/svc/eventlog",
+			"Rev": "a1a1f1746d156bbc9954f29134b20ed4ce2752f1"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/windows/svc/mgr",
+			"Rev": "a1a1f1746d156bbc9954f29134b20ed4ce2752f1"
+		}
+	]
+}
