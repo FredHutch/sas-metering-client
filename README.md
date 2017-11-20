@@ -16,6 +16,30 @@ Windows service to report the utilization of SAS to a Prometheus push gateway to
 ```
 sas-metering-client.exe install
 sas-metering-client.exe start
+sc.exe config "sas-metering-client" start=auto
+sc.exe failure "sas-metering-client"  actions=restart/600000/restart/600000/restart/41400000 reset=86400
+```
+
+### Checking the verion and configuration
+
+To see what version of the agent you are running run the following command:
+
+```
+sas-metering-client.exe version
+
+version: 0.1
+```
+
+To see the configuration that the agent is using run the following command:
+
+```
+sas-metering-client.exe print-config
+
+promtheus server: prometheus.fredhutch.org
+prometheus port: 9991
+username: promuser
+password: '*******fi$'
+TLS: true
 ```
 
 ### Uninstalling

@@ -1,5 +1,8 @@
 package main
 
+// Version of the agent
+const version = "0.1"
+
 // Name of the Windows Service
 const svcName = "sas-metering-client"
 

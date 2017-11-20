@@ -16,7 +16,7 @@ func usage(errmsg string) {
 		"%s\n\n"+
 			"usage: %s <command>\n"+
 			"       where <command> is one of\n"+
-			"       install, remove, debug, start, stop, pause or continue.\n",
+			"       install, remove, debug, start, stop, version, print-config pause or continue.\n",
 		errmsg, os.Args[0])
 	os.Exit(2)
 }
@@ -54,6 +54,10 @@ func main() {
 		err = controlService(svcName, svc.Pause, svc.Paused)
 	case "continue":
 		err = controlService(svcName, svc.Continue, svc.Running)
+	case "version":
+		fmt.Printf("version: %s", version)
+	case "print-config":
+		fmt.Printf("promtheus server: %s\nprometheus port: %s\nusername: %s\npassword: '%s'\nTLS: true", promServer, promServerPort, promUser, fmt.Sprintf("*******%s", promPass[len(promPass)-3:len(promPass)]))
 	default:
 		usage(fmt.Sprintf("invalid command %s", cmd))
 	}
