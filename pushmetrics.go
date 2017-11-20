@@ -25,6 +25,10 @@ func pushMetrics() {
 		log.Print(err)
 	}
 
+	// Windows is often lame so it might allow spaces and other bad charaters in the hostname the code below strips it
+	var badChars = strings.NewReplacer(" ", "-", "\t", "-", "\n", "", "$", "", "&", "", "#", "", "!", "", "%", "")
+	hostname = badChars.Replace(hostname)
+
 	for {
 
 		//time.Sleep(time.Second * 60)
