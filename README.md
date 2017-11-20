@@ -9,7 +9,7 @@ Windows service to report the utilization of SAS to a Prometheus push gateway to
 
 ### Installation
 
-- Download "binary/sas-metering-client.exe" from this repo to you Windows system.
+- Download "binary/sas-metering-client.exe" from this repo to your Windows system.
 - Open a command-line shell with administrative permissions
 
 Run the follow commands:
