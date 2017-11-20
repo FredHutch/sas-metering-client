@@ -27,10 +27,11 @@ func pushMetrics() {
 
 	for {
 
-		time.Sleep(time.Second * 60)
-
+		//time.Sleep(time.Second * 60)
+		time.Sleep(time.Second * reportingInterval)
 		var running int
-		if checkrunning("sas.exe") == true {
+		//if checkrunning("sas.exe") == true {
+		if checkrunning(procName) == true {
 			running = 1
 		} else {
 			running = 0
@@ -39,13 +40,16 @@ func pushMetrics() {
 		metric := fmt.Sprintf("# TYPE sas_running gauge\n# HELP sas_running Is sas.exe running or not (1=true, 0=false)\nsas_running %d\n", running)
 
 		body := strings.NewReader(metric)
-		URL := fmt.Sprintf("https://prometheus.fhcrc.org:9991/metrics/job/sas_desktops/instance/%s", hostname)
+		//URL := fmt.Sprintf("https://prometheus.fhcrc.org:9991/metrics/job/sas_desktops/instance/%s", hostname)
+		URL := fmt.Sprintf("https://%s:%s/metrics/job/sas_desktops/instance/%s", promServer, promServerPort, hostname)
 		req, err := http.NewRequest("POST", URL, body)
 		if err != nil {
 			log.Print(err)
 			continue
 		}
-		req.SetBasicAuth("user", "pass")
+		//req.SetBasicAuth("user", "pass")
+		req.SetBasicAuth(promUser, promPass)
+
 		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
 		//resp, err := http.DefaultClient.Do(req)

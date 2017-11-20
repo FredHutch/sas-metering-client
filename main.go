@@ -22,7 +22,7 @@ func usage(errmsg string) {
 }
 
 func main() {
-	const svcName = "sas-metering-client"
+	//const svcName = "sas-metering-client"
 
 	isIntSess, err := svc.IsAnInteractiveSession()
 	if err != nil {
