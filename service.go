@@ -22,7 +22,7 @@ func (m *processreporter) Execute(args []string, r <-chan svc.ChangeRequest, cha
 	slowtick := time.Tick(2 * time.Second)
 	tick := fasttick
 	changes <- svc.Status{State: svc.Running, Accepts: cmdsAccepted}
-	go proc()
+	go pushMetrics()
 loop:
 	for {
 		select {

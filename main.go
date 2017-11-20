@@ -22,7 +22,7 @@ func usage(errmsg string) {
 }
 
 func main() {
-	const svcName = "processreporter"
+	const svcName = "sas-metering-client"
 
 	isIntSess, err := svc.IsAnInteractiveSession()
 	if err != nil {
@@ -43,7 +43,7 @@ func main() {
 		runService(svcName, true)
 		return
 	case "install":
-		err = installService(svcName, "processreporter")
+		err = installService(svcName, svcName)
 	case "remove":
 		err = removeService(svcName)
 	case "start":
