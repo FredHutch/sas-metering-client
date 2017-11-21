@@ -1,4 +1,5 @@
 // +build windows
+//go:generate goversioninfo -icon=icon.ico
 
 package main
 
