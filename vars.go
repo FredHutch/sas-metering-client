@@ -10,12 +10,12 @@ const svcName = "sas-metering-client"
 const procName = "sas.exe"
 
 // Prometheus PushGateway Server FQDN and TCP port
-const promServer = "prometheus.fredhutch.org"
-const promServerPort = "9991"
+const promServer = "yourserver.name.here"
+const promServerPort = "some-port-number"
 
 // Prometheus PushGateway Username and Password
-const promUser = "prometheus"
-const promPass = "**********"
+const promUser = "some-username "
+const promPass = "some-password"
 
 // How often (seconds) to send metrics to the server
 const reportingInterval = 60
