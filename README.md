@@ -1,6 +1,6 @@
 # SAS Metering Client
 
-Windows service to report the utilization of SAS to a Prometheus push gateway to license metering.
+Windows service to report the utilization of SAS on the desktop for license metering.
 
 ### Requirements
 
@@ -36,9 +36,9 @@ To see the configuration that the agent is using run the following command:
 ```
 sas-metering-client.exe print-config
 
-promtheus server: prometheus.fredhutch.org
-prometheus port: 9991
-username: promuser
+promtheus server: yourserver.yourdomain.org 
+prometheus port: someport-number 
+username: someuser 
 password: '*******fi$'
 TLS: true
 ```
@@ -106,4 +106,3 @@ var DefaultClient = &Client{NonePtrZero: true, PtrNil: false}  // <----- this is
 ````
 
 If you need to update the wmi packgage for any reason, you'll need to re-implement this hack if it's not fixed upstream yet.
-
